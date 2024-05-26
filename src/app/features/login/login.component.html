@@ -1,0 +1,41 @@
+<div class="main-full login">
+    <div class="login-logo">
+        <img src="https://cdn-icons-png.flaticon.com/512/1048/1048361.png" alt="Logo" />
+        <h1>Controle de Caronas</h1>
+    </div>
+    <div class="login-card">
+        <div class="login-header">
+            <h3>Faça seu login!</h3>
+            <label>Informe suas credenciais para acessar suas caronas.</label>
+        </div>
+        <div class="login-form">
+            <div>
+                <label for="email">Username</label>
+                <input type="text" pInputText [(ngModel)]="email" id="email"/>
+            </div>
+
+            <div>
+                <label for="senha">Senha</label>
+                <input type="password" pInputText [(ngModel)]="senha" id="senha"/>
+            </div>
+
+
+        </div>
+        <div class="login-footer" >
+            <my-button
+                label="Registre-se"
+                styleClass="p-button-secondary"
+            />
+            <my-button
+                label="Entrar"
+                styleClass="p-button-primary"
+                (click)="onLogin()"
+            />
+        </div>
+        <div class="login-google" (click)="onLoginGoogle()">
+            <img src="https://cdn-icons-png.flaticon.com/512/281/281764.png" alt="Google" />
+            <p>Faça login pelo Google</p>
+        </div>
+
+    </div>
+</div>

@@ -1,0 +1,8 @@
+<div class="main" >
+    @if(!authService.user){
+        <login></login>
+    }
+    @else{
+        <home></home>
+    }
+</div>

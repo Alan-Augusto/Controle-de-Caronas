@@ -1,0 +1,14 @@
+::ng-deep .p-button{
+    width: 100%;
+    height: 2rem;
+}
+
+::ng-deep .p-button-label{
+    font-size: 1rem;
+    font-weight: 300;
+}
+
+.my-button {
+    flex: 1 1 45%;
+    width: 100%;
+}
