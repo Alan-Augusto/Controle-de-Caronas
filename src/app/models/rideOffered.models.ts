@@ -1,4 +1,4 @@
-export interface ridesOffered{
+export interface rideOffered{
     id: string,
     driverId: string,
     date: string,

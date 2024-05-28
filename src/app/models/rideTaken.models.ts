@@ -1,4 +1,4 @@
-export interface ridesTaken{
+export interface rideTaken{
     id: string,
     rideId: string,
     passengerId: string,

@@ -24,31 +24,17 @@
         </div>
     </div>
 
+    <h4>Suas caronas realizadas</h4>
     <p-tabView class="home-views">
-        <p-tabPanel header="Caronas oferecidas">
-            <div class="home-carona">
-                <div>
-                    suas caronas...
-                </div>
-                <hr/>
-                <div>
-                    <label for="descricao">Descricao</label>
-                    <input type="text" pInputText id="descricao"/>
-                </div>
-                <div>
-                    <label for="data">Data</label>
-                    <input type="date" pInputText id="data"/>
-                </div>
-                <p-button
-                    label="Criar carona"
-                    styleClass="p-button-primary"
-                />
-            </div>
+        <p-tabPanel header="Caronas pendentes">
+            <label>
+                Aqui você tem acesso a todas as caronas que você pegou e que ainda não foram pagas.
+            </label>
         </p-tabPanel>
-        <p-tabPanel header="Caronas pegas">
-            <p>
-                Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium...
-            </p>
+        <p-tabPanel header="Caronas passadas">
+            <label>
+                Aqui você tem acesso a todas as caronas que você pegou e que já foram pagas.
+            </label>
         </p-tabPanel>
     </p-tabView>
 
