@@ -1,7 +1,5 @@
 import { Component } from '@angular/core';
-import { Passageiro } from '../../models/app.models';
 import { AuthService } from '../../auth.service';
-import { PrimeNGConfig } from 'primeng/api';
 import { AngularFireDatabase } from '@angular/fire/compat/database';
 
 @Component({
@@ -11,38 +9,43 @@ import { AngularFireDatabase } from '@angular/fire/compat/database';
 })
 export class HomeComponent {
 
-  descricao: string = '';
-  data: string = '';
-  passageiros: Passageiro[] = [];
-
-  forNewNome:string = '';
-  forNewImg:string = '';
-  forNewTelefone:string = '';
-
-  listRef: any;
-
   constructor(
     public authService: AuthService,
-    private primengConfig: PrimeNGConfig,
-    private database: AngularFireDatabase
+    private database: AngularFireDatabase,
   ) { 
     this.listRef = this.database.list('passageiros');
   }
 
-  addUser() {
-    this.listRef.push(
-      { 
-        nome: this.forNewNome, 
-        img: 'https://cdn-icons-png.flaticon.com/512/1144/1144709.png', 
-        telefone: this.forNewTelefone 
-      }
-    );
+  listRef: any;
 
-    this.forNewNome = '';
-    this.forNewImg = '';
-    this.forNewTelefone = '';
+  rides: any[] = [
+    {
+      nome: 'João',
+      data: '2021-10-10',
+      descricao: 'Viagem para o trabalho',
+    },
+    {
+      nome: 'Maria',
+      data: '2021-10-11',
+      descricao: 'Viagem para o trabalho',
+    },
+    {
+      nome: 'José',
+      data: '2021-10-12',
+      descricao: 'Viagem para o trabalho',
+    },
+    {
+      nome: 'Pedro',
+      data: '2021-10-13',
+      descricao: 'Viagem para o trabalho',
+    }
+  ]
+
+  dialogVisible: boolean = false;
+
+  showDialog() {
+    // this.dialogService.openDialog(RideTakenListComponent, { message: 'Hello from SomeComponent!' });
   }
-
 
   deleteUser(id: string) {
     this.listRef.remove(id);
@@ -50,15 +53,15 @@ export class HomeComponent {
 
 
 
-  teste() {
-    console.log(
-      { 
-        nome: this.forNewNome, 
-        img: 'https://cdn-icons-png.flaticon.com/512/1144/1144709.png', 
-        telefone: this.forNewTelefone 
-      }
-    );
-  }
+  // teste() {
+  //   console.log(
+  //     { 
+  //       nome: this.forNewNome, 
+  //       img: 'https://cdn-icons-png.flaticon.com/512/1144/1144709.png', 
+  //       telefone: this.forNewTelefone 
+  //     }
+  //   );
+  // }
 
 
 }

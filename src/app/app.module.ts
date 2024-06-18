@@ -9,6 +9,13 @@ import { AngularFireDatabaseModule } from '@angular/fire/compat/database';
 import { AuthService } from './auth.service';
 import { LoginModule } from './features/login/login.module';
 import { HomeModule } from './features/home/home.module';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { PrimeNgModule } from './modules/primeng.module';
+import { MyComponentsModule } from './modules/my-components.module';
+import { CaronasModule } from './features/caronas/caronas.module';
+import { PassageirosModule } from './features/passageiros/passageiros.module';
+import { LocaisModule } from './features/locais/locais.module';
+
 
 
 
@@ -32,14 +39,23 @@ import { HomeModule } from './features/home/home.module';
     }),
     AngularFireAuthModule,
     AngularFireDatabaseModule,
+    BrowserAnimationsModule,
 
     LoginModule,
     HomeModule,
+    CaronasModule,
+    PassageirosModule,
+    LocaisModule,
+
+
+
+    PrimeNgModule,
+    MyComponentsModule,
 
   ],
   bootstrap: [RootComponent],
   providers: [
-    AuthService
+    AuthService,
   ]
 })
 export class AppModule { }

@@ -1,41 +1,21 @@
 <div class="main-full home" >
     <div class="home-title">
         <h1>Bem vindo!</h1>
-        <p>Este é o sistema de controle de caronas. Aqui você pode ver suas caronas, oferecer caronas e muito mais!</p>
+        <p>Registre aqui as caronas que você ofereceu!</p>
+    </div>
+    <div class="home-container">
+        <p-tabView>
+            <p-tabPanel header="Caronas">
+                <caronas/>
+            </p-tabPanel>
+            <p-tabPanel header="Amigos">
+                <passageiros/>
+            </p-tabPanel>
+            <p-tabPanel header="Locais">
+                <locais/>
+            </p-tabPanel>
+        </p-tabView>
     </div>
 
-    <div class="home-user">
-        <h4>Meus Dados</h4>
-        <div>
-            <div>
-                <label for="forNewNome">Seu nome</label>
-                <input type="text" pInputText id="forNewNome" [(ngModel)]="forNewNome"/>
-            </div>
-            <div>
-                <label for="forNewTelefone">Seu telefone</label>
-                <input type="text" pInputText id="forNewTelefone" [(ngModel)]="forNewTelefone"/>
-            </div>
-
-            <p-button
-                label="Atualizar"
-                styleClass="p-button-primary"
-                (onClick)="addUser()"
-            />
-        </div>
-    </div>
-
-    <h4>Suas caronas realizadas</h4>
-    <p-tabView class="home-views">
-        <p-tabPanel header="Caronas pendentes">
-            <label>
-                Aqui você tem acesso a todas as caronas que você pegou e que ainda não foram pagas.
-            </label>
-        </p-tabPanel>
-        <p-tabPanel header="Caronas passadas">
-            <label>
-                Aqui você tem acesso a todas as caronas que você pegou e que já foram pagas.
-            </label>
-        </p-tabPanel>
-    </p-tabView>
 
 </div>
