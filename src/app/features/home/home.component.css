@@ -21,5 +21,12 @@
   }
   
 .home-container{
-    width: 60%;
+    width: 80%;
+    
+}
+/* TELAS DE CELULAR USAR 90% */
+@media (max-width: 768px) {
+    .home-container{
+        width: 90%;
+    }
 }

@@ -1,9 +1,10 @@
 <div class="main" >
     @if(!authService.user){
-        <home></home>
-    }
-    @else{
         <login></login>
     }
+    @else{
+        <home></home>
+    }
     <p-dialog></p-dialog>
+    <loading></loading>
 </div>

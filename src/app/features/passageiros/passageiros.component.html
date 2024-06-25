@@ -1,1 +1,30 @@
-<p>passageiros works!</p>
+<div>
+    <form (ngSubmit)="addPassageiro()">
+      <input type="text" [(ngModel)]="passageiro.nome" name="nome" placeholder="Nome" required />
+      <input type="email" [(ngModel)]="passageiro.email" name="email" placeholder="Email" required />
+      <input type="number" [(ngModel)]="passageiro.telefone" name="telefone" placeholder="Telefone" required />
+      <input type="text" [(ngModel)]="passageiro.img" name="img" placeholder="URL da Imagem" required />
+      <button type="submit">Adicionar passageiro</button>
+    </form>
+  
+    <p-table [value]="passageiros" [tableStyle]="{ 'width': '100%' }">
+        <ng-template pTemplate="header">
+            <tr>
+                <th>Nome</th>
+                <th>Email</th>
+                <th>Telefone</th>
+                <th></th>
+            </tr>
+        </ng-template>
+        <ng-template pTemplate="body" let-passageiro>
+            <tr>
+                <td>{{ passageiro.nome.split(' ')[0] }}</td>
+                <td>{{ passageiro.email }}</td>
+                <td>{{ passageiro.telefone }}</td>
+                <td >
+                    <i id="action" (click)="removePassageiro(passageiro.key)" class="pi pi-trash" style="font-size: 1rem"></i>
+                </td>
+            </tr>
+        </ng-template>
+    </p-table>
+  

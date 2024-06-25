@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { CaronasComponent } from './caronas.component';
 import { PrimeNgModule } from '../../modules/primeng.module';
 import { MyComponentsModule } from '../../modules/my-components.module';
+import { FormsModule } from '@angular/forms';
 
 
 
@@ -13,7 +14,8 @@ import { MyComponentsModule } from '../../modules/my-components.module';
   imports: [
     CommonModule,
     PrimeNgModule,
-    MyComponentsModule
+    MyComponentsModule,
+    FormsModule
   ],
   exports: [
     CaronasComponent

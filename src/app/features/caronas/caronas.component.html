@@ -1,1 +1,44 @@
-<p>caronas works!</p>
+<div>
+    <form (ngSubmit)="addCarona()">
+        <input type="text" pInputText [(ngModel)]="carona.descricao" name="descricao" placeholder="Descrição" />
+        
+        <p-dropdown [options]="locais" [(ngModel)]="carona.idOrigem" name="idOrigem" optionLabel="nome" optionValue="key" placeholder="Origem" />
+
+        <p-dropdown [options]="locais" [(ngModel)]="carona.idDestino" name="idDestino" optionLabel="nome" optionValue="key" placeholder="Destino" />
+
+
+        <p-multiSelect [options]="passageiros" [(ngModel)]="carona.idPassageiros" name="idPassageiros" optionLabel="nome" optionValue="key"
+            placeholder="Passageiros" />
+
+        <p-calendar [(ngModel)]="carona.data" placeholder="Data" name="data" />
+
+        <button type="submit">Adicionar carona</button>
+    </form>
+
+    <p-table [value]="caronas" [tableStyle]="{ 'width': '100%' }">
+        <ng-template pTemplate="header">
+            <tr>
+                <th>Descrição</th>
+                <th>Origem</th>
+                <th></th>
+                <th>Destino</th>
+                <th>Data</th>
+                <th></th>
+            </tr>
+        </ng-template>
+        <ng-template pTemplate="body" let-carona>
+            <tr>
+                <td>{{ carona.descricao }}</td>
+                <td>{{ carona.origem.bairro}}</td>
+                <td>
+                    <i id="action" class="pi pi-arrow-right"
+                        style="font-size: 1rem"></i>
+                </td>
+                <td>{{ carona.destino.bairro }}</td>
+                <td>{{ carona.data }}</td>
+                <td>
+                    <i id="action" (click)="removeCarona(carona.key)" class="pi pi-trash" style="font-size: 1rem"></i>
+                </td>
+            </tr>
+        </ng-template>
+    </p-table>
