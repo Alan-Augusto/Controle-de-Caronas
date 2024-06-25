@@ -4,5 +4,4 @@ export interface Local {
     bairro: string;
     cidade: string;
     numero: string;
-    img: string;
 }

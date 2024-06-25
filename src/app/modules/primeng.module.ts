@@ -9,6 +9,8 @@ import { InputTextModule } from 'primeng/inputtext';
 import { CalendarModule } from 'primeng/calendar';
 import { MultiSelectModule } from 'primeng/multiselect';
 import { DropdownModule } from 'primeng/dropdown';
+import { InputMaskModule } from 'primeng/inputmask';
+import { InputNumberModule } from 'primeng/inputnumber';
 //tabview
 import { TabViewModule } from 'primeng/tabview';
 // Adicione outros módulos PrimeNG que você deseja usar
@@ -24,6 +26,8 @@ import { TabViewModule } from 'primeng/tabview';
     CalendarModule,
     MultiSelectModule,
     DropdownModule,
+    InputMaskModule,
+    InputNumberModule,
     // Adicione outros módulos PrimeNG importados
   ],
   exports: [
@@ -35,6 +39,8 @@ import { TabViewModule } from 'primeng/tabview';
     CalendarModule,
     MultiSelectModule,
     DropdownModule,
+    InputMaskModule,
+    InputNumberModule,
     // Adicione outros módulos PrimeNG exportados
   ]
 })

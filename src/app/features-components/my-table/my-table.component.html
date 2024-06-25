@@ -1,0 +1,30 @@
+<p-table [value]="datasource" [tableStyle]="{ 'width': '100%' }">
+    <ng-template pTemplate="header">
+        <tr>
+            @for (col of config?.columns; track $index) {
+                <th [style.width]="col.width" >{{ col.header }}</th>
+            }
+            @for (action of config?.actions; track $index) {
+                <th [style.width]="'5%'"></th>
+            }
+        </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-row>
+        <tr>
+            @for (col of config?.columns; track $index) {
+                @if(col.type === 'text') {
+                    <td [style.width]="col.width">{{ row[col.field] }}</td>
+                }
+                @if(col.type === 'icon') {
+                    <td [style.width]="col.width"><i class="pi {{col.icon}} icon" ></i></td>
+                }
+                @if(col.type === 'date') {
+                    <td [style.width]="col.width">{{ formatDate(row[col.field]) }}</td>
+                }
+            }
+            @for(action of config?.actions; track $index) {
+                <td><i class="pi {{action.icon}} icon" (click)="performAction(action, row)" style="cursor: pointer; font-size: 1rem; margin-right: 0.5rem;"></i></td>
+            }
+        </tr>
+    </ng-template>
+</p-table>

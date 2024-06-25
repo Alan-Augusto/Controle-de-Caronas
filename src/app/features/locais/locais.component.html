@@ -1,12 +1,19 @@
 <div>
     <form (ngSubmit)="addLocal()">
-      <input type="text" [(ngModel)]="local.nome" name="nome" placeholder="Nome" required />
-      <input type="text" [(ngModel)]="local.rua" name="rua" placeholder="Rua" required />
-      <input type="text" [(ngModel)]="local.bairro" name="bairro" placeholder="Bairro" required />
-      <input type="text" [(ngModel)]="local.cidade" name="cidade" placeholder="Cidade" required />
-      <input type="text" [(ngModel)]="local.numero" name="numero" placeholder="Número" required />
-      <input type="text" [(ngModel)]="local.img" name="img" placeholder="URL da Imagem" required />
-      <button type="submit">Adicionar Local</button>
+      <input type="text" pInputText [(ngModel)]="local.nome" name="nome" placeholder="Nome" required />
+
+      <input type="text" pInputText [(ngModel)]="local.rua" name="rua" placeholder="Rua" required />
+
+      <input type="text" pInputText [(ngModel)]="local.bairro" name="bairro" placeholder="Bairro" required />
+      
+      <input type="text" pInputText [(ngModel)]="local.cidade" name="cidade" placeholder="Cidade" required />
+      
+      
+
+      <input type="number" pInputText [(ngModel)]="local.numero" name="numero" placeholder="Número" required />
+      
+      <my-button label="Adicionar local" onclick="addLocal()" icon="pi pi-plus"/>
+
     </form>
   
     <p-table [value]="locais" [tableStyle]="{ 'width': '100%' }">

@@ -1,10 +1,12 @@
 <div>
     <form (ngSubmit)="addPassageiro()">
-      <input type="text" [(ngModel)]="passageiro.nome" name="nome" placeholder="Nome" required />
-      <input type="email" [(ngModel)]="passageiro.email" name="email" placeholder="Email" required />
-      <input type="number" [(ngModel)]="passageiro.telefone" name="telefone" placeholder="Telefone" required />
-      <input type="text" [(ngModel)]="passageiro.img" name="img" placeholder="URL da Imagem" required />
-      <button type="submit">Adicionar passageiro</button>
+      <input type="text" pInputText [(ngModel)]="passageiro.nome" name="nome" placeholder="Nome" required />
+      <input type="email" pInputText [(ngModel)]="passageiro.email" name="email" placeholder="Email" required />
+      <!-- <input type="number" pInputText [(ngModel)]="passageiro.telefone" name="telefone" placeholder="Telefone" required /> -->
+      <p-inputMask  mask="(99)99999-9999"  [(ngModel)]="passageiro.telefone" placeholder="(99)99999-9999" name="telefone" placeholder="Telefone" required />
+      <input type="text" pInputText [(ngModel)]="passageiro.img" name="img" placeholder="URL da Imagem" required />
+      <my-button label="Adicionar passageiro" onclick="addPassageiro()" icon="pi pi-plus"/>
+
     </form>
   
     <p-table [value]="passageiros" [tableStyle]="{ 'width': '100%' }">

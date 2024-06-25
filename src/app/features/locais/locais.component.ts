@@ -11,7 +11,7 @@ import { Local } from '../../models/local.model';
 export class LocaisComponent implements OnInit {
 
   locais: Local[] = [];
-  local: Local = { nome: '', rua: '', bairro: '', cidade: '', numero: '', img: '' };
+  local: Local = { nome: '', rua: '', bairro: '', cidade: '', numero: '' };
 
   constructor(private locaisService: LocaisService) {}
 
@@ -23,7 +23,7 @@ export class LocaisComponent implements OnInit {
 
   addLocal() {
     this.locaisService.addLocal(this.local);
-    this.local = { nome: '', rua: '', bairro: '', cidade: '', numero: '', img: '' };
+    this.local = { nome: '', rua: '', bairro: '', cidade: '', numero: ''};
   }
 
   removeLocal(key: string) {

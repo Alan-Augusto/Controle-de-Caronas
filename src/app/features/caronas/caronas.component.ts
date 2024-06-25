@@ -7,6 +7,7 @@ import { take } from 'rxjs';
 import { withLoading } from '../../features-components/operators/with-loading.operator';
 import { LoadingService } from '../../services/loading.service';
 import { PassageirosServices } from '../../services/passageiros.service';
+import { TableConfig } from '../../models/table-config.model';
 
 @Component({
   selector: 'caronas',
@@ -20,7 +21,7 @@ export class CaronasComponent {
     descricao: '',
     idOrigem: 0,
     idDestino: 0,
-    data: new Date(),
+    data: '',
     idPassageiros: []
   };
 
@@ -34,9 +35,27 @@ export class CaronasComponent {
     private loadingService: LoadingService
   ) { }
 
+  tableConfig: TableConfig = {
+    columns: [
+      { header: 'Descrição',width:"10%", field: 'descricao', type: 'text' },
+      { header: 'Origem',width:"10%", field: 'origem', type: 'text' },
+      { header: '',width:"5%", field: '', type: 'icon', icon: 'pi pi-arrow-right' },
+      { header: 'Destino',width:"10%", field: 'destino', type: 'text' },
+      { header: 'Data',width:"20%", field: 'data', type: 'date' }
+    ],
+    actions: [
+      {
+        label: 'Remover',
+        icon: 'pi pi-trash',
+        action: (row: any) => this.removeCarona(row.key)
+      }
+    ]
+  };
+
   ngOnInit() {
     this.carregarPassageiros();
   }
+
 
   carregarPassageiros() {
     this.passageirosService.getPassageiros().pipe(
@@ -50,7 +69,6 @@ export class CaronasComponent {
         console.error('Erro ao obter passageiros', err);
       },
       complete:()=>{
-        console.log("1")
         this.carregaLocais();
       }
     });
@@ -68,7 +86,6 @@ export class CaronasComponent {
         console.error('Erro ao obter locais', err);
       },
       complete: () => {
-        console.log("2")
         this.carregaCaronas();
       }
     });
@@ -81,35 +98,42 @@ export class CaronasComponent {
     ).subscribe({
       next: caronas => {
         this.caronas = caronas;
+        console.log(caronas)
       },
       error: err => {
         console.error('Erro ao obter caronas', err);
       },
       complete: () => {
-        console.log("3")
         this.carregaLocaisPorChave();
       }
     });
   }
 
   carregaLocaisPorChave() {
-    //pegar o idorigem e iddestino e buscar o local correspondente na lista de locais
+    // pegar o idOrigem e idDestino e buscar o bairro correspondente na lista de locais
     this.caronas.forEach(carona => {
-      carona.origem = this.locais.find(local => local.key === carona.idOrigem);
-      carona.destino = this.locais.find(local => local.key === carona.idDestino);
+      let origemLocal = this.locais.find(local => local.key === carona.idOrigem);
+      let destinoLocal = this.locais.find(local => local.key === carona.idDestino);
+  
+      // Se encontrar o local correspondente, atribui apenas o bairro
+      carona.origem = origemLocal ? origemLocal.bairro : null;
+      carona.destino = destinoLocal ? destinoLocal.bairro : null;
     });
-    console.log("3")
   }
-
+  
 
   addCarona() {
     console.log(this.carona)
-    // this.caronasService.addCarona(this.carona);
+    this.caronasService.addCarona({
+      ...this.carona,
+      data: this.carona.data.toString()
+    });
+
     this.carona = {
       descricao: '',
       idOrigem: 0,
       idDestino: 0,
-      data: new Date(),
+      data: '',
       idPassageiros: []
     };
 

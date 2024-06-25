@@ -5,6 +5,6 @@ export interface Carona {
     descricao: string;
     idOrigem: number;
     idDestino: number;
-    data: Date;
+    data: string;
     idPassageiros: number[];
 }
