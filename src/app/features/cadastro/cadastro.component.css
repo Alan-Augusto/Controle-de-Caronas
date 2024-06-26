@@ -1,4 +1,4 @@
-.login{
+.cadastro{
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -7,7 +7,7 @@
 background: linear-gradient(133deg, rgba(255,255,255,1) 0%, rgba(96,196,227,1) 20%, rgba(66,133,244,1) 40%, rgba(190,140,205,1) 60%, rgba(255,231,229,1) 80%, rgba(255,255,255,1) 100%);
 }
 
-.login-logo{
+.cadastro-logo{
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -31,7 +31,7 @@ background: linear-gradient(133deg, rgba(255,255,255,1) 0%, rgba(96,196,227,1) 2
     }
 }
 
-.login-card{
+.cadastro-card{
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -45,14 +45,14 @@ background: linear-gradient(133deg, rgba(255,255,255,1) 0%, rgba(96,196,227,1) 2
     background-color: white;
 }
 
-.login-form{
+.cadastro-form{
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
     width: 100%;
 }
 
-.login-header{
+.cadastro-header{
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -60,36 +60,11 @@ background: linear-gradient(133deg, rgba(255,255,255,1) 0%, rgba(96,196,227,1) 2
     gap: 0.5rem;
 }
 
-.login-footer {
+.cadastro-footer {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     gap: 0.5rem;
     width: 100%;
-}
-
-
-.login-google{
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    gap: 0.5rem;
-    border-radius: 1rem;
-    background-color: white;
-    padding: 0.5rem;
-    margin-top: 1rem;
-    box-shadow: 0 0 10px 0 rgba(0,0,0,0.1);
-    cursor: pointer;
-
-    img{
-        width: 1.5rem;
-        height: 1.5rem;
-    }
-
-    p{
-        margin: 0;
-        padding: 0;
-    }
 }
 

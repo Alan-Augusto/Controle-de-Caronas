@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-import { AuthService } from '../../auth.service';
+import { Component, OnInit } from '@angular/core';
+import { AuthService } from '../../services/auth.service';
 import { PrimeNGConfig } from 'primeng/api';
 import { AngularFireDatabase } from '@angular/fire/compat/database';
 
@@ -8,7 +8,9 @@ import { AngularFireDatabase } from '@angular/fire/compat/database';
   templateUrl: './root.component.html',
   styleUrl: './root.component.css'
 })
-export class RootComponent {
+export class RootComponent implements OnInit{
+
+  cadastro:boolean = false;
 
   constructor(
     public authService: AuthService,
@@ -16,6 +18,9 @@ export class RootComponent {
   ) {}
 
   ngOnInit() {
+
+    this.authService.verifyAuth();
+
     this.primengConfig.ripple = true;
     this.primengConfig.zIndex = {
       modal: 1100,    // dialog, sidebar
@@ -25,6 +30,16 @@ export class RootComponent {
     };
   }
 
-  
+  goCadastro(){
+    this.cadastro = true;
+  }
 
+  goLogin(){
+    this.cadastro = false;
+  }
+
+
+  get user() {
+    return this.authService.user;
+  }
 }

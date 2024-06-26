@@ -1,10 +1,16 @@
 <div class="main" >
     @if(!authService.user){
-        <home></home>
+        @if(cadastro){
+            <cadastro></cadastro>
+        }
+        @else{
+            <login (goCadastro)="goCadastro()" ></login>
+        }
     }
     @else{
-        <login></login>
+        <home></home>
     }
+
     <p-dialog></p-dialog>
     <loading></loading>
 </div>

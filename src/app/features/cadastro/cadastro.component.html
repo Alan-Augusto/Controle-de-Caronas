@@ -1,0 +1,39 @@
+<div class="main-full cadastro">
+    <div class="cadastro-logo">
+        <img src="https://cdn-icons-png.flaticon.com/512/1048/1048361.png" alt="Logo" />
+        <h1>Controle de Caronas</h1>
+    </div>
+    <div class="cadastro-card">
+        <div class="cadastro-header">
+            <h3>Faça seu cadastro!</h3>
+            <label>Informe suas credenciais para criar sua conta.</label>
+        </div>
+        <div class="cadastro-form">
+            <div>
+                <label for="email">Email</label>
+                <input type="text" pInputText [(ngModel)]="email" id="email"/>
+            </div>
+
+            <div>
+                <label for="senha">Senha</label>
+                <input type="password" pInputText [(ngModel)]="senha1" id="senha1" (ngModelChange)="validatePassword()"/>
+            </div>
+            <div>
+                <label for="senha">Confirmação da senha</label>
+                <input type="password" pInputText [(ngModel)]="senha2" id="senha2" (ngModelChange)="validatePassword()"/>
+            </div>
+            @if(!senhaValida){
+                <p-chip label="As senhas não conferem"/>
+            }
+
+        </div>
+        <div class="cadastro-footer" >
+            <my-button
+                label="Cadastrar"
+                styleClass="p-button-secondary"
+                (click)="cadastrar()"
+            />
+        </div>
+
+    </div>
+</div>

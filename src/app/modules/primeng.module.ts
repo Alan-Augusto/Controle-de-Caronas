@@ -11,6 +11,8 @@ import { MultiSelectModule } from 'primeng/multiselect';
 import { DropdownModule } from 'primeng/dropdown';
 import { InputMaskModule } from 'primeng/inputmask';
 import { InputNumberModule } from 'primeng/inputnumber';
+import { ChipModule } from 'primeng/chip';
+import { FloatLabelModule } from 'primeng/floatlabel';
 //tabview
 import { TabViewModule } from 'primeng/tabview';
 // Adicione outros módulos PrimeNG que você deseja usar
@@ -28,7 +30,9 @@ import { TabViewModule } from 'primeng/tabview';
     DropdownModule,
     InputMaskModule,
     InputNumberModule,
-    // Adicione outros módulos PrimeNG importados
+    ChipModule,
+    FloatLabelModule,
+    
   ],
   exports: [
     ButtonModule,
@@ -41,7 +45,9 @@ import { TabViewModule } from 'primeng/tabview';
     DropdownModule,
     InputMaskModule,
     InputNumberModule,
-    // Adicione outros módulos PrimeNG exportados
+    ChipModule,
+    FloatLabelModule,
+    
   ]
 })
 export class PrimeNgModule { }

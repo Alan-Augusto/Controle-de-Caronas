@@ -10,7 +10,7 @@
         </div>
         <div class="login-form">
             <div>
-                <label for="email">Usuário</label>
+                <label for="email">Email</label>
                 <input type="text" pInputText [(ngModel)]="email" id="email"/>
             </div>
 
@@ -25,6 +25,7 @@
             <my-button
                 label="Registre-se"
                 styleClass="p-button-secondary"
+                (click)="onRegister()"
             />
             <my-button
                 label="Entrar"

@@ -6,7 +6,7 @@ import { FormsModule } from '@angular/forms';
 import { AngularFireModule } from '@angular/fire/compat';
 import { AngularFireAuthModule } from '@angular/fire/compat/auth';
 import { AngularFireDatabaseModule } from '@angular/fire/compat/database';
-import { AuthService } from './auth.service';
+import { AuthService } from './services/auth.service';
 import { LoginModule } from './features/login/login.module';
 import { HomeModule } from './features/home/home.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -15,6 +15,7 @@ import { MyComponentsModule } from './modules/my-components.module';
 import { CaronasModule } from './features/caronas/caronas.module';
 import { PassageirosModule } from './features/passageiros/passageiros.module';
 import { LocaisModule } from './features/locais/locais.module';
+import { CadastroModule } from './features/cadastro/cadastro.module';
 
 
 
@@ -42,12 +43,11 @@ import { LocaisModule } from './features/locais/locais.module';
     BrowserAnimationsModule,
 
     LoginModule,
+    CadastroModule,
     HomeModule,
     CaronasModule,
     PassageirosModule,
     LocaisModule,
-
-
 
     PrimeNgModule,
     MyComponentsModule,

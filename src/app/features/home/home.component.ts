@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { AuthService } from '../../auth.service';
+import { AuthService } from '../../services/auth.service';
 import { AngularFireDatabase } from '@angular/fire/compat/database';
 
 @Component({
@@ -50,18 +50,4 @@ export class HomeComponent {
   deleteUser(id: string) {
     this.listRef.remove(id);
   }
-
-
-
-  // teste() {
-  //   console.log(
-  //     { 
-  //       nome: this.forNewNome, 
-  //       img: 'https://cdn-icons-png.flaticon.com/512/1144/1144709.png', 
-  //       telefone: this.forNewTelefone 
-  //     }
-  //   );
-  // }
-
-
 }

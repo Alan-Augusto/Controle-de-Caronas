@@ -98,7 +98,6 @@ export class CaronasComponent {
     ).subscribe({
       next: caronas => {
         this.caronas = caronas;
-        console.log(caronas)
       },
       error: err => {
         console.error('Erro ao obter caronas', err);

@@ -4,6 +4,8 @@ import { LoginComponent } from './login.component';
 import { FormsModule } from '@angular/forms';
 import { InputTextModule } from 'primeng/inputtext';
 import { MyButtonModule } from '../../features-components/my-button/my-button.module';
+import { PrimeNgModule } from '../../modules/primeng.module';
+import { MyComponentsModule } from '../../modules/my-components.module';
 
 
 @NgModule({
@@ -13,8 +15,8 @@ import { MyButtonModule } from '../../features-components/my-button/my-button.mo
   imports: [
     CommonModule,
     FormsModule,
-    InputTextModule,
-    MyButtonModule,
+    PrimeNgModule,
+    MyComponentsModule,
   ],
   exports: [
     LoginComponent
