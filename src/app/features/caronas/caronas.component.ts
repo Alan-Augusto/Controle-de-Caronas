@@ -10,7 +10,7 @@ import { PassageirosServices } from '../../services/passageiros.service';
 import { TableConfig } from '../../models/table-config.model';
 import { DialogService, DynamicDialogRef } from 'primeng/dynamicdialog';
 import { ResumoCaronaComponent } from '../resumo-carona/resumo-carona.component';
-import { MessageService } from 'primeng/api';
+import { ConfirmationService, MessageService } from 'primeng/api';
 
 @Component({
   selector: 'caronas',
@@ -37,7 +37,8 @@ export class CaronasComponent {
     private passageirosService: PassageirosServices,
     private loadingService: LoadingService,
     private dialogService: DialogService,
-    private messageService: MessageService
+    private messageService: MessageService,
+    private confirmationService: ConfirmationService
   ) { }
 
   tableConfig: TableConfig = {
@@ -48,7 +49,6 @@ export class CaronasComponent {
       { header: 'Destino',width:"10%", field: 'destino', type: 'text' },
     ],
     actions: [
-
       {
         label: 'Ver',
         icon: 'pi pi-eye',
@@ -57,13 +57,20 @@ export class CaronasComponent {
       {
         label: 'Remover',
         icon: 'pi pi-trash',
-        action: (row: any) => this.removeCarona(row.key)
+        action: (row: any, target:any) => this.removeCarona(row.key, target)
       },
     ]
+
+
+
   };
 
   ngOnInit() {
     this.carregarPassageiros();
+    //Se a tela for de celulat, não mostrar a ação de ver
+    if(window.innerWidth < 768){
+      this.tableConfig.actions = this.tableConfig.actions.filter(action => action.label !== 'Ver');  
+    }
   }
 
 
@@ -179,9 +186,25 @@ export class CaronasComponent {
 
   }
 
-  removeCarona(key: string) {
-    this.caronasService.removePassageiro(key);
-    this.carregaCaronas();
+  removeCarona(key: string, target:any) {
+    this.confirmationService.confirm({
+      target: target,
+      message: 'Certeza que deseja excluir o registro?',
+      header: 'Exclusão de Registro',
+      icon: 'pi pi-info-circle',
+      acceptButtonStyleClass:"p-button-danger p-button-text",
+      rejectButtonStyleClass:"p-button-text p-button-text",
+      acceptIcon:"none",
+      rejectIcon:"none",
+
+      accept: () => {
+        this.caronasService.removePassageiro(key);
+        this.messageService.add({ severity: 'info', summary: 'Confirmed', detail: 'Carona Removida!' });
+        this.carregaCaronas();
+      },
+      reject: () => {}
+  });
+
   }
 
   abrirDialogResumoCarona(carona: Carona) {

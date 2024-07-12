@@ -9,7 +9,7 @@ export interface TableColumn {
 export interface TableAction {
     label: string;
     icon: string;
-    action: (row: any) => void;
+    action: (row: any, target:any) => void;
 }
 
 export interface TableConfig {

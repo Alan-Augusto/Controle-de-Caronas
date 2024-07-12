@@ -15,3 +15,17 @@
     align-items: center;
 }
 
+/* Em telas de celular */
+@media (max-width: 768px) {
+    ::ng-deep .my-table tr, td{
+        font-size: .8rem;
+        padding: .5rem;
+    }
+    .actions, .actions-header{
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+        justify-content: end;
+        align-items: center;
+    }
+}

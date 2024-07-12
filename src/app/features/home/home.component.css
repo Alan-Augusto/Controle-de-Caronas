@@ -13,8 +13,13 @@
 
 .home-container{
     width: 80%;
-    
+    background-color: white;
+    border-radius: .8rem;
+    /* cortar os elementos */
+    overflow: hidden;
+    padding: 0.2rem;
 }
+
 /* TELAS DE CELULAR USAR 90% */
 @media (max-width: 768px) {
     .home-container{

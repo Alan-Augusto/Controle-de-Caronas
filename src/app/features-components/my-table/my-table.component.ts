@@ -16,9 +16,9 @@ export class MyTableComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  performAction(action: TableAction, row: any): void {
+  performAction(action: TableAction, row: any, target:any): void {
     if (action && action.action) {
-      action.action(row);
+      action.action(row, target);
     }
   }
 
