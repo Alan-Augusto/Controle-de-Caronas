@@ -7,6 +7,7 @@ import { MyComponentsModule } from '../../modules/my-components.module';
 import { CaronasModule } from '../caronas/caronas.module';
 import { PassageirosModule } from '../passageiros/passageiros.module';
 import { LocaisModule } from '../locais/locais.module';
+import { ResultadosModule } from '../resultados/resultados.module';
 
 
 @NgModule({
@@ -21,7 +22,8 @@ import { LocaisModule } from '../locais/locais.module';
     CaronasModule,
     PassageirosModule,
     LocaisModule,
-  ],
+    ResultadosModule,
+],
   exports: [
     HomeComponent
   ]

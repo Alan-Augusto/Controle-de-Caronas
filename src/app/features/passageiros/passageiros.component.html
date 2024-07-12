@@ -5,7 +5,7 @@
       <!-- <input type="number" pInputText [(ngModel)]="passageiro.telefone" name="telefone" placeholder="Telefone" required /> -->
       <p-inputMask  mask="(99)99999-9999"  [(ngModel)]="passageiro.telefone" placeholder="(99)99999-9999" name="telefone" placeholder="Telefone" required />
       <input type="text" pInputText [(ngModel)]="passageiro.img" name="img" placeholder="URL da Imagem" required />
-      <my-button label="Adicionar passageiro" onclick="addPassageiro()" icon="pi pi-plus"/>
+      <my-button label="Adicionar passageiro" (onClick)="addPassageiro()" icon="pi pi-plus"/>
 
     </form>
   

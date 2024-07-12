@@ -38,8 +38,7 @@ export class RootComponent implements OnInit{
     this.cadastro = false;
   }
 
-
-  get user() {
-    return this.authService.user;
+  logout() {
+    this.authService.signOut();
   }
 }

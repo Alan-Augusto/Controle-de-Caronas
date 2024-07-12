@@ -16,6 +16,7 @@ import { CaronasModule } from './features/caronas/caronas.module';
 import { PassageirosModule } from './features/passageiros/passageiros.module';
 import { LocaisModule } from './features/locais/locais.module';
 import { CadastroModule } from './features/cadastro/cadastro.module';
+import { ResultadosModule } from './features/resultados/resultados.module';
 
 
 
@@ -48,7 +49,7 @@ import { CadastroModule } from './features/cadastro/cadastro.module';
     CaronasModule,
     PassageirosModule,
     LocaisModule,
-
+    ResultadosModule,
     PrimeNgModule,
     MyComponentsModule,
 

@@ -12,7 +12,7 @@
 
       <input type="number" pInputText [(ngModel)]="local.numero" name="numero" placeholder="Número" required />
       
-      <my-button label="Adicionar local" onclick="addLocal()" icon="pi pi-plus"/>
+      <my-button label="Adicionar local" (onClick)="addLocal()" icon="pi pi-plus"/>
 
     </form>
   

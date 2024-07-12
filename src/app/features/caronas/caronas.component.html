@@ -12,7 +12,7 @@
 
         <p-calendar [(ngModel)]="carona.data" placeholder="Data" name="data" />
 
-        <my-button label="Adicionar carona" (click)="addCarona()" icon="pi pi-plus"/>
+        <my-button label="Adicionar carona" (onClick)="addCarona()" icon="pi pi-plus"/>
     </form>
     <my-table
         [datasource]="caronas"
