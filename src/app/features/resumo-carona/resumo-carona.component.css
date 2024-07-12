@@ -1,0 +1,30 @@
+h4,
+p {
+    margin: 0;
+    padding: 0;
+}
+
+h4 {
+    margin-top: 1rem;
+    margin-bottom: 0.2rem;
+}
+
+.lista-passageiros {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+    gap: 0.5rem;
+}
+
+.trajeto {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+::ng-deep .p-chip {
+    color: whitesmoke;
+    background-color: rgb(191, 89, 255);
+}

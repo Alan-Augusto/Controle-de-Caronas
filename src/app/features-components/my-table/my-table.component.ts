@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { TableAction, TableConfig } from '../../models/table-config.model';
 
 @Component({
@@ -9,6 +9,7 @@ import { TableAction, TableConfig } from '../../models/table-config.model';
 export class MyTableComponent implements OnInit {
   @Input() datasource: any[] = [];
   @Input() config: TableConfig | undefined;
+  @Output() clickedRow: EventEmitter<any> = new EventEmitter();
 
   constructor() { }
 
@@ -22,7 +23,14 @@ export class MyTableComponent implements OnInit {
   }
 
   formatDate(data: string) {
-    //FORMATO brasileiro
-    return new Date(data).toLocaleDateString('pt-BR');
+    //FORMATO brasileiro - apenas dia e mes
+    return new Date(data).toLocaleDateString('pt-BR').split('/').slice(0, 2).join('/');
+  }
+
+  calcularLarguraActions(actions?:TableAction[]){
+    if(!actions){
+      return '0%';
+    }
+    return (actions.length * 1.5) + '%';
   }
 }

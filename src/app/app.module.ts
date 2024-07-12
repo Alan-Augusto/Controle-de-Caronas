@@ -17,6 +17,8 @@ import { PassageirosModule } from './features/passageiros/passageiros.module';
 import { LocaisModule } from './features/locais/locais.module';
 import { CadastroModule } from './features/cadastro/cadastro.module';
 import { ResultadosModule } from './features/resultados/resultados.module';
+import { DialogService } from 'primeng/dynamicdialog';
+import { ResumoCaronaModule } from './features/resumo-carona/resumo-carona.module';
 
 
 
@@ -50,6 +52,7 @@ import { ResultadosModule } from './features/resultados/resultados.module';
     PassageirosModule,
     LocaisModule,
     ResultadosModule,
+    ResumoCaronaModule,
     PrimeNgModule,
     MyComponentsModule,
 
@@ -57,6 +60,7 @@ import { ResultadosModule } from './features/resultados/resultados.module';
   bootstrap: [RootComponent],
   providers: [
     AuthService,
+    DialogService,
   ]
 })
 export class AppModule { }

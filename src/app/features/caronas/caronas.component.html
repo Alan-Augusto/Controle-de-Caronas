@@ -17,4 +17,5 @@
     <my-table
         [datasource]="caronas"
         [config]="tableConfig"
+        (clickedRow)="abrirDialogResumoCarona($event)"
     />

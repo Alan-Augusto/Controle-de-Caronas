@@ -1,0 +1,19 @@
+<h4>Data:</h4>
+<p>{{ formatDate(carona.data) }}</p>
+
+<h4>Descrição</h4>
+<p>{{ carona.descricao }}</p>
+
+<h4>Trajeto</h4>
+<div class="trajeto" >
+    <p>{{ carona.origem }}</p>
+    <i class="pi pi pi-arrow-right"></i>
+    <p>{{ carona.destino }}</p>
+</div>
+
+<h4>Passageiros:</h4>
+<div class="lista-passageiros">
+    @for (passageiro of carona.passageiros; track $index) {
+        <p-chip [label]="passageiro" icon="pi pi-user"/>
+    }
+</div>

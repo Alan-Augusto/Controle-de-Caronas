@@ -13,9 +13,9 @@ import { InputMaskModule } from 'primeng/inputmask';
 import { InputNumberModule } from 'primeng/inputnumber';
 import { ChipModule } from 'primeng/chip';
 import { FloatLabelModule } from 'primeng/floatlabel';
-//tabview
 import { TabViewModule } from 'primeng/tabview';
-// Adicione outros módulos PrimeNG que você deseja usar
+import { DynamicDialogModule } from 'primeng/dynamicdialog';
+import { ToastModule } from 'primeng/toast';
 
 @NgModule({
   imports: [
@@ -32,6 +32,8 @@ import { TabViewModule } from 'primeng/tabview';
     InputNumberModule,
     ChipModule,
     FloatLabelModule,
+    DynamicDialogModule,
+    ToastModule,
     
   ],
   exports: [
@@ -47,7 +49,7 @@ import { TabViewModule } from 'primeng/tabview';
     InputNumberModule,
     ChipModule,
     FloatLabelModule,
-    
+    ToastModule,
   ]
 })
 export class PrimeNgModule { }

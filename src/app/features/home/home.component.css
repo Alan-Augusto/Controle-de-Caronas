@@ -11,15 +11,6 @@
     text-align: center;
 }
 
-/*colocar box shadow na linha ao passar o mouse*/
-::ng-deep .my-table tr:hover {
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    transition: box-shadow 0.3s ease-in-out;
-    /*Escalar em 1%*/
-    transform: scale(1);
-    z-index: 99999;
-  }
-  
 .home-container{
     width: 80%;
     
