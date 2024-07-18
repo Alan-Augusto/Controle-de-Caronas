@@ -9,6 +9,11 @@ body {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+
+    background: white;
+    background-image: radial-gradient(black 1px, transparent 0);
+    background-size: 40px 40px;
+    background-position: -19px -19px;
 }
 
 .main-full {

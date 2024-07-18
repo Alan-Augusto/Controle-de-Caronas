@@ -4,6 +4,8 @@ import { PassageirosComponent } from './passageiros.component';
 import { MyComponentsModule } from '../../modules/my-components.module';
 import { PrimeNgModule } from '../../modules/primeng.module';
 import { FormsModule } from '@angular/forms';
+import { DialogService } from 'primeng/dynamicdialog';
+import { ConfirmationService, MessageService } from 'primeng/api';
 
 
 
@@ -19,6 +21,11 @@ import { FormsModule } from '@angular/forms';
   ],
   exports: [
     PassageirosComponent
+  ],
+  providers: [
+    DialogService,
+    MessageService,
+    ConfirmationService
   ]
 })
 export class PassageirosModule { }

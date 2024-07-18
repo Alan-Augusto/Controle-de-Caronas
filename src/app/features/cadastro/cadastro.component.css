@@ -3,8 +3,8 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background: rgb(255,255,255);
-background: linear-gradient(133deg, rgba(255,255,255,1) 0%, rgba(96,196,227,1) 20%, rgba(66,133,244,1) 40%, rgba(190,140,205,1) 60%, rgba(255,231,229,1) 80%, rgba(255,255,255,1) 100%);
+    /* background: rgb(255,255,255);
+    background: linear-gradient(133deg, rgba(255,255,255,1) 0%, rgba(96,196,227,1) 20%, rgba(66,133,244,1) 40%, rgba(190,140,205,1) 60%, rgba(255,231,229,1) 80%, rgba(255,255,255,1) 100%); */
 }
 
 .cadastro-logo{

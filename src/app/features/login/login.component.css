@@ -3,8 +3,8 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background: rgb(255,255,255);
-background: linear-gradient(133deg, rgba(255,255,255,1) 0%, rgba(96,196,227,1) 20%, rgba(66,133,244,1) 40%, rgba(190,140,205,1) 60%, rgba(255,231,229,1) 80%, rgba(255,255,255,1) 100%);
+    /* background: rgb(255,255,255);
+    background: linear-gradient(133deg, rgba(255,255,255,1) 0%, rgba(96,196,227,1) 20%, rgba(66,133,244,1) 40%, rgba(190,140,205,1) 60%, rgba(255,231,229,1) 80%, rgba(255,255,255,1) 100%); */
 }
 
 .login-logo{
@@ -42,7 +42,7 @@ background: linear-gradient(133deg, rgba(255,255,255,1) 0%, rgba(96,196,227,1) 2
     padding: 1rem;
     border-radius: 1rem;
     box-shadow: 0 0 10px 0 rgba(0,0,0,0.1);
-    background-color: white;
+    background-color: #fafafa;
 }
 
 .login-form{

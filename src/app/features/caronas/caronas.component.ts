@@ -60,9 +60,6 @@ export class CaronasComponent {
         action: (row: any, target:any) => this.removeCarona(row.key, target)
       },
     ]
-
-
-
   };
 
   ngOnInit() {
