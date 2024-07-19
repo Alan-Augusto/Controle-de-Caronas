@@ -17,6 +17,7 @@ import { TabViewModule } from 'primeng/tabview';
 import { DynamicDialogModule } from 'primeng/dynamicdialog';
 import { ToastModule } from 'primeng/toast';
 import { ConfirmDialogModule } from 'primeng/confirmdialog';
+import { CardModule } from 'primeng/card';
 
 @NgModule({
   imports: [
@@ -35,7 +36,8 @@ import { ConfirmDialogModule } from 'primeng/confirmdialog';
     FloatLabelModule,
     DynamicDialogModule,
     ToastModule,
-    ConfirmDialogModule
+    ConfirmDialogModule,
+    CardModule,
   ],
   exports: [
     ButtonModule,
@@ -51,7 +53,8 @@ import { ConfirmDialogModule } from 'primeng/confirmdialog';
     ChipModule,
     FloatLabelModule,
     ToastModule,
-    ConfirmDialogModule
+    ConfirmDialogModule,
+    CardModule,
   ]
 })
 export class PrimeNgModule { }
