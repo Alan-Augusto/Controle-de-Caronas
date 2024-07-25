@@ -16,11 +16,11 @@
 
             <div>
                 <label for="senha">Senha</label>
-                <input type="password" pInputText [(ngModel)]="senha1" id="senha1" (ngModelChange)="validatePassword()"/>
+                <input type="password" pInputText [(ngModel)]="senha1" id="senha1"/>
             </div>
             <div>
                 <label for="senha">Confirmação da senha</label>
-                <input type="password" pInputText [(ngModel)]="senha2" id="senha2" (ngModelChange)="validatePassword()"/>
+                <input type="password" pInputText [(ngModel)]="senha2" id="senha2"/>
             </div>
             @if(!senhaValida){
                 <p-chip label="As senhas não conferem"/>
