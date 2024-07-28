@@ -24,7 +24,7 @@ export class LoginComponent {
   onLogin(){
     this.auth.emailSignin(this.email, this.senha).pipe(
       withLoading(this.loadingService),
-      // take(1) // Finaliza a subscrição após receber o primeiro valor
+       take(1) // Finaliza a subscrição após receber o primeiro valor
     ).subscribe({
       next: (user) => {
         console.log('Usuário logado com sucesso!', user);

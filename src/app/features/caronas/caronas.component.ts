@@ -112,11 +112,13 @@ export class CaronasComponent {
     ).subscribe({
       next: caronas => {
         this.caronas = caronas;
+        console.log(this.caronas);
       },
       error: err => {
         console.error('Erro ao obter caronas', err);
       },
       complete: () => {
+        console.log('Caronas carregadas');
         this.carregaComplementosPorChave();
       }
     });
@@ -125,12 +127,15 @@ export class CaronasComponent {
   carregaComplementosPorChave() {
     // pegar o idOrigem e idDestino e buscar o bairro correspondente na lista de locais
     this.caronas.forEach(carona => {
-      let origemLocal = this.locais.find(local => local.key === carona.idOrigem);
-      let destinoLocal = this.locais.find(local => local.key === carona.idDestino);
+      
+      let origemLocal = this.locais.find((local:Local) => local.key === carona.idOrigem);
+      let destinoLocal = this.locais.find((local:Local) => local.key === carona.idDestino);
   
       // Se encontrar o local correspondente, atribui apenas o bairro
       carona.origem = origemLocal ? origemLocal.bairro : null;
       carona.destino = destinoLocal ? destinoLocal.bairro : null;
+
+      console.log(carona);
     });
 
     //Pegar a lista de ids de passegieros e buscar o nome correspondente na lista de passageiros
@@ -193,10 +198,12 @@ export class CaronasComponent {
       rejectButtonStyleClass:"p-button-text p-button-text",
       acceptIcon:"none",
       rejectIcon:"none",
+      acceptLabel:"Excluir",
+      rejectLabel:"Cancelar",
 
       accept: () => {
         this.caronasService.removePassageiro(key);
-        this.messageService.add({ severity: 'info', summary: 'Confirmed', detail: 'Carona Removida!' });
+        this.messageService.add({ severity: 'info', summary: 'Confirmação', detail: 'Carona Removida!' });
         this.carregaCaronas();
       },
       reject: () => {}

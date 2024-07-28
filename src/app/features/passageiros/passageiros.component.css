@@ -41,3 +41,8 @@ form {
     color: red;
   }
   
+  .container-passageiros{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }

@@ -9,6 +9,7 @@
 
 ::ng-deep .my-table td{
     word-wrap: break-word !important;
+    word-break: break-all;
 }
 
 

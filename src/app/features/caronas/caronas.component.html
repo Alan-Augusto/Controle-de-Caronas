@@ -1,21 +1,24 @@
-<div>
-    <form (ngSubmit)="addCarona()">
-        <input type="text" pInputText [(ngModel)]="carona.descricao" name="descricao" placeholder="Descrição" />
-        
-        <p-dropdown [options]="locais" [(ngModel)]="carona.idOrigem" name="idOrigem" optionLabel="nome" optionValue="key" placeholder="Origem" />
-
-        <p-dropdown [options]="locais" [(ngModel)]="carona.idDestino" name="idDestino" optionLabel="nome" optionValue="key" placeholder="Destino" />
-
-
-        <p-multiSelect [options]="passageiros" [(ngModel)]="carona.idPassageiros" name="idPassageiros" optionLabel="nome" optionValue="key"
-            placeholder="Passageiros" />
-
-        <p-calendar [(ngModel)]="carona.data" placeholder="Data" name="data" />
-
-        <my-button label="Adicionar carona" (onClick)="addCarona()" icon="pi pi-plus"/>
-    </form>
+<div class="container-carona" >
+    <p-fieldset legend="Nova Carona" [toggleable]="true" [collapsed]="true" >
+        <form (ngSubmit)="addCarona()">
+            <input type="text" pInputText [(ngModel)]="carona.descricao" name="descricao" placeholder="Descrição" />
+            
+            <p-dropdown [options]="locais" [(ngModel)]="carona.idOrigem" name="idOrigem" optionLabel="nome" optionValue="key" placeholder="Origem" />
+    
+            <p-dropdown [options]="locais" [(ngModel)]="carona.idDestino" name="idDestino" optionLabel="nome" optionValue="key" placeholder="Destino" />
+    
+    
+            <p-multiSelect [options]="passageiros" [(ngModel)]="carona.idPassageiros" name="idPassageiros" optionLabel="nome" optionValue="key"
+                placeholder="Passageiros" />
+    
+            <p-calendar [(ngModel)]="carona.data" placeholder="Data" name="data" />
+    
+            <my-button label="Adicionar carona" (onClick)="addCarona()" icon="pi pi-plus"/>
+        </form>
+    </p-fieldset>
     <my-table
         [datasource]="caronas"
         [config]="tableConfig"
         (clickedRow)="abrirDialogResumoCarona($event)"
     />
+</div>

@@ -56,7 +56,7 @@ export class CadastroComponent {
     if(this.formIsValid()){
       this.authService.emailSignup(this.email, this.senha1).pipe(
         withLoading(this.loadingService),
-        // take(1) // Finaliza a subscrição após receber o primeiro valor
+         take(1) // Finaliza a subscrição após receber o primeiro valor
       ).subscribe({
         next: (credentials) => {
           console.log('Cadastro realizado com sucesso', credentials);

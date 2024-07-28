@@ -27,7 +27,15 @@ export class PassageirosServices {
     );
   }
 
+  getPassageirosAtivos(): Observable<Passageiro[]> {
+    return this.getPassageiros().pipe(
+      map((passageiros: Passageiro[]) => 
+        passageiros.filter(p => p.ativo === true)
+      )
+    );
+  }
+
   removePassageiro(key: string): void {
-    this.passageirosRef.remove(key);
+    this.passageirosRef.update(key, { ativo: false });
   }
 }

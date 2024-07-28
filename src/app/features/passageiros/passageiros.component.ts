@@ -18,7 +18,8 @@ export class PassageirosComponent {
     nome: '',
     email: '',
     telefone: '',
-    img: ''
+    img: '',
+    ativo: true
   };
 
   constructor(
@@ -31,9 +32,9 @@ export class PassageirosComponent {
 
   tableConfig: TableConfig = {
     columns: [
-      { header: 'Nome',width:"20%", field: 'nome', type: 'text' },
-      { header: 'Email',width:"10%", field: 'email', type: 'text' },
-      { header: 'Telefone',width:"20%", field: 'telefone', type: 'text' },
+      { header: 'Nome',width:"15%", field: 'nome', type: 'text' },
+      { header: 'Telefone',width:"35%", field: 'telefone', type: 'text' },
+      { header: 'Email',width:"50%", field: 'email', type: 'text' },
     ],
     actions: [
       {
@@ -45,7 +46,7 @@ export class PassageirosComponent {
   };
 
   ngOnInit() {
-    this.passageirosService.getPassageiros().subscribe(passageiros => {
+    this.passageirosService.getPassageirosAtivos().subscribe(passageiros => {
       this.passageiros = passageiros;
     });
   }
@@ -56,7 +57,8 @@ export class PassageirosComponent {
       nome: '',
       email: '',
       telefone: '',
-      img: ''
+      img: '',
+      ativo: true
     };
   }
 
@@ -71,9 +73,12 @@ export class PassageirosComponent {
       acceptIcon:"none",
       rejectIcon:"none",
 
+      acceptLabel:"Excluir",
+      rejectLabel:"Cancelar",
+
       accept: () => {
         this.passageirosService.removePassageiro(key);
-        this.messageService.add({ severity: 'info', summary: 'Confirmed', detail: 'Amigo Removido!' });
+        this.messageService.add({ severity: 'info', summary: 'Confirmação', detail: 'Amigo Removido!' });
       },
       reject: () => {}
     });

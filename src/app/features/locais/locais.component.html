@@ -1,41 +1,17 @@
-<div>
-    <form (ngSubmit)="addLocal()">
-      <input type="text" pInputText [(ngModel)]="local.nome" name="nome" placeholder="Nome" required />
+<div class="container-locais" >
+    <p-fieldset legend="Novo local" [toggleable]="true" [collapsed]="true" >
+        <form (ngSubmit)="addLocal()">
+          <input type="text" pInputText [(ngModel)]="local.nome" name="nome" placeholder="Nome" required />
+          <input type="text" pInputText [(ngModel)]="local.rua" name="rua" placeholder="Rua" required />
+          <input type="text" pInputText [(ngModel)]="local.bairro" name="bairro" placeholder="Bairro" required />
+          <input type="text" pInputText [(ngModel)]="local.cidade" name="cidade" placeholder="Cidade" required />
+          <input type="number" pInputText [(ngModel)]="local.numero" name="numero" placeholder="Número" required />
+          <my-button label="Adicionar local" (onClick)="addLocal()" icon="pi pi-plus"/>
+        </form>
+    </p-fieldset>
 
-      <input type="text" pInputText [(ngModel)]="local.rua" name="rua" placeholder="Rua" required />
-
-      <input type="text" pInputText [(ngModel)]="local.bairro" name="bairro" placeholder="Bairro" required />
-      
-      <input type="text" pInputText [(ngModel)]="local.cidade" name="cidade" placeholder="Cidade" required />
-      
-      
-
-      <input type="number" pInputText [(ngModel)]="local.numero" name="numero" placeholder="Número" required />
-      
-      <my-button label="Adicionar local" (onClick)="addLocal()" icon="pi pi-plus"/>
-
-    </form>
-  
-    <p-table [value]="locais" [tableStyle]="{ 'width': '100%' }">
-        <ng-template pTemplate="header">
-            <tr>
-                <th>Nome</th>
-                <th>Bairro</th>
-                <th>Rua</th>
-                <th>Numero</th> 
-                <th></th>
-            </tr>
-        </ng-template>
-        <ng-template pTemplate="body" let-local>
-            <tr>
-                <td>{{ local.nome }}</td>
-                <td>{{ local.bairro }}</td>
-                <td>{{ local.rua }}</td>
-                <td>{{ local.numero }}</td>
-                <td >
-                    <i id="action" (click)="removeLocal(local.key)" class="pi pi-trash" style="font-size: 1rem"></i>
-                </td>
-            </tr>
-        </ng-template>
-    </p-table>
+    <my-table
+        [datasource]="locais"
+        [config]="tableConfig"
+    />
   

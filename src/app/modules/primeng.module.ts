@@ -18,6 +18,7 @@ import { DynamicDialogModule } from 'primeng/dynamicdialog';
 import { ToastModule } from 'primeng/toast';
 import { ConfirmDialogModule } from 'primeng/confirmdialog';
 import { CardModule } from 'primeng/card';
+import { FieldsetModule } from 'primeng/fieldset';
 
 @NgModule({
   imports: [
@@ -38,6 +39,8 @@ import { CardModule } from 'primeng/card';
     ToastModule,
     ConfirmDialogModule,
     CardModule,
+    FieldsetModule,
+    
   ],
   exports: [
     ButtonModule,
@@ -55,6 +58,8 @@ import { CardModule } from 'primeng/card';
     ToastModule,
     ConfirmDialogModule,
     CardModule,
+    FieldsetModule,
+    
   ]
 })
 export class PrimeNgModule { }

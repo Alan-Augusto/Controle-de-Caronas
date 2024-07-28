@@ -1,4 +1,5 @@
-<div>
+<div class="container-passageiros"  >
+  <p-fieldset legend="Novo amigo" [toggleable]="true" [collapsed]="true" >
     <form (ngSubmit)="addPassageiro()">
       <input type="text" pInputText [(ngModel)]="passageiro.nome" name="nome" placeholder="Nome" required />
       <input type="email" pInputText [(ngModel)]="passageiro.email" name="email" placeholder="Email" required />
@@ -6,8 +7,8 @@
       <p-inputMask  mask="(99)99999-9999"  [(ngModel)]="passageiro.telefone" placeholder="(99)99999-9999" name="telefone" placeholder="Telefone" required />
       <input type="text" pInputText [(ngModel)]="passageiro.img" name="img" placeholder="URL da Imagem" required />
       <my-button label="Adicionar passageiro" (onClick)="addPassageiro()" icon="pi pi-plus"/>
-
     </form>
+  </p-fieldset>
 
     <my-table
         [datasource]="passageiros"

@@ -3,4 +3,5 @@ export interface Passageiro {
     email: string;
     telefone: string;
     img: string;
+    ativo: boolean;
 }
